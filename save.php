@@ -1,5 +1,6 @@
 <?php
 include("input.php");
+include('connect.php');
 $content = $_POST['content'];
 $user = $_POST['user'];
 
@@ -19,3 +20,13 @@ if($is == false){
 
 
 var_dump($content, $user);
+
+
+
+//$db -> query("SET NAMES UTF8");
+//this is used for chinese characters.
+
+$time = time();
+$sql = "insert into msg ( content, user, time ) values ('$content', '$user', '$time')";
+$is = $db->query($sql);
+var_dump($is);
