@@ -1,20 +1,21 @@
 <?php
+include("input.php");
 $content = $_POST['content'];
 $user = $_POST['user'];
-$n = ['fuck', 'stupid','slack'];
 
-if( $content == ""){
-    die("Should have comments");
+
+$input = new input();
+
+
+$is = $input -> post($content);
+if($is == false){
+    die("the message is wrong");
 }
 
-if ( $user == ""){
-    die ("should have user name");
+$is = $input -> post($user);
+if($is == false){
+    die("You can't use that name");
 }
 
-foreach ($n as $value){
-    if($user == $value){
-        die("The user name is not allowed");
-    }
-}
 
 var_dump($content, $user);
