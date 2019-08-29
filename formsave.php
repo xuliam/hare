@@ -1,10 +1,15 @@
 <?php
 
-$content = $_POST['content'];
-$user = $_POST['user'];
+$aa = $_POST['aa'];
+$bb = $_POST['bb'];
 
-if( $content == ''){
-    die("Should have comments");
-}
+var_dump($aa, $bb);
+
+//$content = $_POST['content'];
+//$user = $_POST['user'];
+//
+//if( $content == ''){
+//    die("Should have comments");
+//}
 
 
